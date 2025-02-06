@@ -24,11 +24,17 @@
   justify-content: space-between;
 }
 .nav_menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  display: flex; /* Ascunde meniul pe dispozitivele mici */
+  align-items: center; /* Aranjează elementele pe verticală */
+  gap: 10px; /* Spațiu între elemente */
+  padding: 10px 0;
 }
+.nav_menu.show {
+  display: flex !important; /* Forțează meniul să fie vizibil când este activată clasa 'show' */
+  animation: slideIn 0.3s ease-in-out; /* Adaugă animație la deschidere */
+
+}
+
 
 .nav_bar {
   display: flex;
@@ -51,6 +57,9 @@
 
 .menu_open_button {
   display: none;
+  width: 40px;
+  height: 40px;
+  background-color: #f3961c;
 }
 
 .section_details {
@@ -59,6 +68,48 @@
   align-items: center;
   min-height: 100vh;
   justify-content: space-between;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-20px); /* Poziția inițială, mai sus */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* Poziția finală, pe loc */
+    opacity: 1;
+  }
+}
+
+@media (max-width: 946px) {
+  .nav_menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Plasează meniul imediat sub buton */
+    right: 0; /* Plasează meniul în partea dreaptă a butonului */
+    width: 200px; /* Lățimea meniului */
+    flex-direction: column; /* Elemente aliniate pe verticală */
+    gap: 10px; /* Spațiu între elemente */
+    padding: 10px 0;
+    background-color: rgba(59, 20, 28, 0.8); /* Culoare semi-transparentă (8% opacitate) */
+    border-radius: 8px; /* Colțuri rotunjite pentru meniul pop-up */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbra pentru un efect de pop-up */
+    z-index: 999; /* Asigură-te că meniul este deasupra altor elemente */
+ 
+  }
+
+  .menu_open_button {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #f3961c;
+    border-radius: 10px;
+    border: none;
+    background-image: url(./img/cup-hot-fill.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 /*hero section*/
@@ -117,6 +168,22 @@
   font-weight: 500;
   transition: 0.3s ease;
   text-decoration: none;
+}
+
+@media (max-width: 805px) {
+  .button {
+    padding: 10px 26px;
+    display: block;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    background: #f3961c;
+    color: #3b141c;
+    font-size: 1.12rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    text-decoration: none;
+ 
+  }
 }
 
 /*Section - About-Us*/
@@ -385,9 +452,8 @@
 }
 
 /*footer*/
-.footer-section{
+.footer-section {
   background-color: #252525;
-
 }
 
 .footer-content {
@@ -396,14 +462,12 @@
   justify-content: space-between;
   padding: 40px 0 20px;
   color: white;
-
 }
 
 .policy_text {
   display: flex;
   gap: 20px;
   font-size: 1.15rem;
-
 }
 .policy_link {
   text-decoration: none;
