@@ -34,8 +34,6 @@
   animation: slideIn 0.3s ease-in-out; /* Adaugă animație la deschidere */
 }
 
-
-
 .nav_bar {
   display: flex;
   padding: 20px;
@@ -76,8 +74,7 @@
   transform: scale(1.1); /* Sau orice alt efect de hover pe care îl preferi */
 }
 
-
-.menu_open_button:hover{
+.menu_open_button:hover {
   background-color: #f3961c;
   border-radius: 25px;
   transition: transform 0.5s ease-in-out, background-color 0.3s ease-in-out;
@@ -211,9 +208,6 @@
   text-decoration: none;
 }
 
-
-
-
 @media (max-width: 776px) {
   .button {
     width: 100px;
@@ -238,7 +232,7 @@
   }
   .hero_img {
     width: 146%;
-}
+  }
 }
 
 /*Section - About-Us*/
@@ -294,13 +288,10 @@
   gap: 20px;
 }
 
-
-
-  .social_link:hover i svg {
-    transform: scale(1.1); /* Mărește SVG-ul la hover */
-    fill: #f3961c; /* Schimbă culoarea la hover */
-  }
-
+.social_link:hover i svg {
+  transform: scale(1.1); /* Mărește SVG-ul la hover */
+  fill: #f3961c; /* Schimbă culoarea la hover */
+}
 
 @media (max-width: 680px) {
   .about_img {
@@ -348,10 +339,6 @@
   padding-top: 100px;
 }
 
-
-
-
-
 .menu-item {
   display: flex;
   flex-direction: column;
@@ -382,8 +369,7 @@
 }
 
 @media (max-width: 879px) {
-
-  .menu-item{
+  .menu-item {
     width: calc(100% / 2 - 50px); /* 2 elemente pe rând */
   }
   .menu_name {
@@ -393,8 +379,6 @@
   .menu_text {
     font-size: 12px;
   }
-
-
 }
 
 @media (max-width: 680px) {
@@ -404,7 +388,7 @@
   .menu_text {
     font-size: 10px;
   }
-  .menu-item{
+  .menu-item {
     width: 100%;
   }
 }
@@ -575,18 +559,16 @@
   }
 }
 
-
 @media (max-width: 470px) {
   .contact-content {
-   display: flex;
-   flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
-.footer-content{
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 
 .footer-section {
