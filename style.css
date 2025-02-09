@@ -63,9 +63,13 @@
 
 .menu_open_button {
   display: none;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background-color: #f3961c;
+  background-image: url(./img/cup-hot-fill.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 25px;
 }
 
 .menu_open_button.active:hover {
@@ -76,7 +80,7 @@
 
 .menu_open_button:hover {
   background-color: #f3961c;
-  border-radius: 25px;
+
   transition: transform 0.5s ease-in-out, background-color 0.3s ease-in-out;
   color: #3b141c;
   box-shadow: 0px 0px 10px 5px #f3961c;
@@ -101,50 +105,9 @@
   }
 }
 
-@media (max-width: 946px) {
-  .nav_menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%; /* Plasează meniul imediat sub buton */
-    right: 0; /* Plasează meniul în partea dreaptă a butonului */
-    width: 200px; /* Lățimea meniului */
-    flex-direction: column; /* Elemente aliniate pe verticală */
-    gap: 10px; /* Spațiu între elemente */
-    padding: 10px 0;
-    background-color: rgba(
-      59,
-      20,
-      28,
-      0.8
-    ); /* Culoare semi-transparentă (8% opacitate) */
-    border-radius: 8px; /* Colțuri rotunjite pentru meniul pop-up */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbra pentru un efect de pop-up */
-    z-index: 999; /* Asigură-te că meniul este deasupra altor elemente */
-  }
-}
-@media (max-width: 946px) {
-  .menu_open_button {
-    display: block; /* Face butonul vizibil */
-    width: 40px;
-    height: 40px;
-    background-color: #f3961c;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    z-index: 1000; /* Asigură-te că e deasupra altor elemente */
-    border-radius: 5px;
-    background-image: url(./img/cup-hot-fill.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
 /*hero section*/
 
 .hero_section {
-  min-height: 1vh;
   background-color: #3b141c;
   padding: 40px;
 }
@@ -154,6 +117,7 @@
   padding-top: 5rem;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 .hero_img {
   width: 90%;
@@ -206,33 +170,6 @@
   font-weight: 500;
   transition: 0.3s ease;
   text-decoration: none;
-}
-
-@media (max-width: 776px) {
-  .button {
-    width: 100px;
-    height: 30px;
-    font-size: 8px;
-    text-align: center;
-  }
-}
-
-@media (max-width: 680px) {
-  .subtitle {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 470px) {
-  .subtitle {
-    font-size: 12px;
-  }
-  .description {
-    font-size: 8px;
-  }
-  .hero_img {
-    width: 146%;
-  }
 }
 
 /*Section - About-Us*/
@@ -293,28 +230,6 @@
   fill: #f3961c; /* Schimbă culoarea la hover */
 }
 
-@media (max-width: 680px) {
-  .about_img {
-    width: 250px; /* va ocupa 50% din lățimea containerului */
-    height: 250px; /* menține proporțiile */
-  }
-
-  .section_text {
-    font-size: 2vw; /* ajustare dinamică a textului */
-  }
-}
-
-@media (max-width: 470px) {
-  .about_img {
-    width: 150px; /* va ocupa 50% din lățimea containerului */
-    height: 150px; /* menține proporțiile */
-  }
-
-  .section_text {
-    font-size: 2vw; /* ajustare dinamică a textului */
-  }
-}
-
 /*Our Menue*/
 
 .menu-section {
@@ -366,31 +281,6 @@
 .menu_name {
   font-size: 1.75rem;
   font-weight: 500;
-}
-
-@media (max-width: 879px) {
-  .menu-item {
-    width: calc(100% / 2 - 50px); /* 2 elemente pe rând */
-  }
-  .menu_name {
-    font-size: 1.25rem;
-  }
-
-  .menu_text {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 680px) {
-  .menu_name {
-    font-size: 1rem;
-  }
-  .menu_text {
-    font-size: 10px;
-  }
-  .menu-item {
-    width: 100%;
-  }
 }
 
 .menu-details {
@@ -460,13 +350,6 @@
 .gallery_img:hover {
   transform: scale(1.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 879px) {
-  .gallery_img {
-    width: 250px;
-    height: 150px;
-  }
 }
 
 /*contact-section*/
@@ -552,25 +435,6 @@
   margin-bottom: 5px;
 }
 
-@media (max-width: 946px) {
-  .contact-form {
-    margin-left: 14%;
-    flex-grow: 0;
-  }
-}
-
-@media (max-width: 470px) {
-  .contact-content {
-    display: flex;
-    flex-direction: column;
-  }
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-}
-
 .footer-section {
   background-color: black;
 }
@@ -596,4 +460,117 @@
 .policy_link {
   text-decoration: none;
   color: rgb(253, 253, 253);
+}
+/*media Query*/
+
+/* 🖥 Laptop/PC (1024px) */
+@media screen and (max-width: 900px) {
+  .nav_link {
+    font-size: 1.5rem; /* Text mai mare pe PC */
+  }
+  .contact-form {
+    flex-grow: 0.8;
+    margin-left: 10%;
+  }
+  .nav_menu {
+    display: none;
+  }
+
+  .menu_open_button {
+    display: flex;
+  }
+  .nav_menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Plasează meniul imediat sub buton */
+    right: 0; /* Plasează meniul în partea dreaptă a butonului */
+    width: 200px; /* Lățimea meniului */
+    flex-direction: column; /* Elemente aliniate pe verticală */
+    gap: 10px; /* Spațiu între elemente */
+    padding: 10px 0;
+    background-color: rgba(
+      59,
+      20,
+      28,
+      0.8
+    ); /* Culoare semi-transparentă (8% opacitate) */
+    border-radius: 8px; /* Colțuri rotunjite pentru meniul pop-up */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbra pentru un efect de pop-up */
+    z-index: 999; /* Asigură-te că meniul este deasupra altor elemente */
+  }
+
+  .menu_open_button {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #f3961c;
+    border-radius: 10px;
+    border: none;
+    background-image: url(./img/cup-hot-fill.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .hero_content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .hero_img {
+    width: 250px;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .subtitle {
+    max-width: 100%;
+    text-align: center;
+  }
+  .description {
+    max-width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/*media */
+@media screen and (max-width: 768px) {
+  .menu-item {
+    width: calc(100% / 2 - 60px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menu-item {
+    width: 100%;
+  }
+
+  .button {
+    padding: 10px 20px;
+  }
+  .about_content {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .contact-form {
+    width: 100%;
+    margin-left: 0;
+  }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
